@@ -29,12 +29,7 @@ void addClientSettings()
             exit(-1);
         }
         ofstream clientAppSettings(clientAppSettingsPath);
-        clientAppSettings << R"({"DFIntTaskSchedulerTargetFps": )" + to_string(fpsCaps);
-        clientAppSettings << separator;
-        clientAppSettings << R"("FFlagDebugGraphicsDisableMetal": true)";
-        clientAppSettings << separator;
-        clientAppSettings << R"("FFlagDebugGraphicsPreferVulkan": true)";
-        clientAppSettings << "}" << endl;
+        clientAppSettings << R"({"DFIntTaskSchedulerTargetFps": )" + to_string(fpsCaps) << separator << R"("FFlagDebugGraphicsDisableMetal": true)" << separator << R"("FFlagDebugGraphicsPreferVulkan": true)" << "}" << endl;
         clientAppSettings.close();
         cout << "Successfully set fpsCaps to " + to_string(fpsCaps) + " with Vulkan mode" << endl;
     }
@@ -51,8 +46,7 @@ void addClientSettings()
             exit(-1);
         }
         ofstream clientAppSettings(clientAppSettingsPath);
-        clientAppSettings << R"({"DFIntTaskSchedulerTargetFps": )" + to_string(fpsCaps);
-        clientAppSettings << "}" << endl;
+        clientAppSettings << R"({"DFIntTaskSchedulerTargetFps": )" + to_string(fpsCaps) << "}" << endl;
         clientAppSettings.close();
         cout << "Successfully set fpsCaps to " + to_string(fpsCaps) << endl;
     }
