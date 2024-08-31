@@ -14,7 +14,7 @@ void addClientSettings()
     string answer;
     const char* clientSettingsPath = "/Applications/Roblox.app/Contents/MacOS/ClientSettings";
     const string clientAppSettingsPath = "/Applications/Roblox.app/Contents/MacOS/ClientSettings/ClientAppSettings.json";
-    cout << "Do you want to use Vulkan? Answer yes or no." << endl;
+    cout << "Do you want to use Vulkan renderer? Answer yes or no." << endl;
     getline(cin, answer);
     if (answer == "yes")
     {
@@ -31,7 +31,7 @@ void addClientSettings()
         ofstream clientAppSettings(clientAppSettingsPath);
         clientAppSettings << R"({"DFIntTaskSchedulerTargetFps": )" + to_string(fpsCaps) << separator << R"("FFlagDebugGraphicsDisableMetal": true)" << separator << R"("FFlagDebugGraphicsPreferVulkan": true)" << "}" << endl;
         clientAppSettings.close();
-        cout << "Successfully set fpsCaps to " + to_string(fpsCaps) + " with Vulkan mode" << endl;
+        cout << "Successfully set fpsCaps to " + to_string(fpsCaps) + " with Vulkan renderer" << endl;
     }
     else if (answer == "no")
     {
